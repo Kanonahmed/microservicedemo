@@ -1,10 +1,15 @@
+using Catalog.API.HostingService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 builder.Services.AddOpenApi();
+builder.Services.AddHostedService<AppHostedService>();
 
 var app = builder.Build();
 
