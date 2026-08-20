@@ -11,10 +11,5 @@ namespace Catalog.API.Manager
         public ProductManager() : base(new ProductRepository())
         {
         }
-
-        internal void Add(object getPreconfiguredProducts)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
