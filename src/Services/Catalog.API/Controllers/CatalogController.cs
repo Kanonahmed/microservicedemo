@@ -21,8 +21,16 @@ namespace Catalog.API.Controllers
         [ProducesResponseType(typeof(IEnumerable<Products>),(int)HttpStatusCode.OK)]
         public IActionResult GetProduct()
         {
-            var products = _productManager.GetAll();
-            return CustomResult("Data loaded successfully",products);
+            try
+            {
+                var products = _productManager.GetAll();
+                return CustomResult("Data loaded successfully", products);
+            }
+            catch (Exception ex) 
+            {
+                return CustomResult(ex.Message,HttpStatusCode.BadRequest);
+            }
+            
         }
     }
 }
