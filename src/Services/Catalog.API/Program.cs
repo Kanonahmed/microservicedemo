@@ -21,14 +21,22 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    //app.MapOpenApi();
 
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/openapi/v1.json", "My API v1");
-        options.RoutePrefix = "swagger"; // Access the UI at /swagger
-    });
+    //app.UseSwaggerUI(options =>
+    //{
+    //    options.SwaggerEndpoint("/openapi/v1.json", "My API v1");
+    //    options.RoutePrefix = "swagger"; // Access the UI at /swagger
+    //});
 }
+
+// taking out following two command for taking swagger in hosting stage
+app.MapOpenApi();
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/openapi/v1.json", "My API v1");
+    options.RoutePrefix = "swagger"; // Access the UI at /swagger
+});
 
 app.UseAuthorization();
 

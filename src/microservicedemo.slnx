@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/Services/">
+    <Project Path="Services/Basket.API/Basket.API.csproj" Id="5576708a-6f04-41ae-9cd6-a359842f8126" />
     <Project Path="Services/Catalog.API/Catalog.API.csproj" Id="b854bd42-493b-4b08-9b7d-7e0513c061eb" />
   </Folder>
 </Solution>

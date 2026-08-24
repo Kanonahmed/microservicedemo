@@ -100,5 +100,39 @@ namespace Catalog.API.Controllers
                 return CustomResult(ex.Message, HttpStatusCode.BadRequest);
             }
         }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(Products), (int)HttpStatusCode.OK)]
+        public IActionResult GetById(string Id)
+        {
+            try
+            {
+                
+                var product = _productManager.GetById(Id);
+                return CustomResult("Data loaded successfully", product);
+            }
+            catch (Exception ex)
+            {
+                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+            }
+
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<Products>), (int)HttpStatusCode.OK)]
+        [ResponseCache(Duration = 10)]
+        public IActionResult GetByCategory(string Category)
+        {
+            try
+            {
+                var products = _productManager.GetByCategory(Category);
+                return CustomResult("Data loaded successfully", products);
+            }
+            catch (Exception ex)
+            {
+                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+            }
+
+        }
     }
 }
