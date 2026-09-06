@@ -2,11 +2,14 @@
 {
     public class ShoppingCart
     {
-        ShoppingCart(string username)
+        public ShoppingCart(string username)
         {
             UserName= username;
         }
-        ShoppingCart() { }
+        public ShoppingCart()
+        { 
+        
+        }
 
         public string UserName { get; set; }
         public List<ShoppingCartItem> items { get; set; } = new List<ShoppingCartItem>();
