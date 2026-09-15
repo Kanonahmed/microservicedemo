@@ -15,7 +15,7 @@ namespace Discount.API.Repository
         public async Task<bool> CreateDiscount(Coupon coupon)
         {
             var connection = new NpgsqlConnection(_configuration.GetConnectionString("DiscountDb"));
-            var affected = await connection.ExecuteAsync("INSERT INTO Coupon(Id,ProductId,ProductName,Description,Amount) VALUES(@Id,@ProductId,@ProductName,@Description,@Amount)",new {Id=coupon.Id,ProductId=coupon.ProductId,ProdcutName=coupon.ProductName,Description=coupon.Description,Amount=coupon.Amount});
+            var affected = await connection.ExecuteAsync("INSERT INTO Coupon(Id,ProductId,ProductName,Description,Amount) VALUES(@Id,@ProductId,@ProductName,@Description,@Amount)",new {Id=coupon.Id,ProductId=coupon.ProductId,ProductName=coupon.ProductName,Description=coupon.Description,Amount=coupon.Amount});
             if(affected>0)
             {
                 return true;
@@ -52,7 +52,7 @@ namespace Discount.API.Repository
         public async Task<bool> UpdateDiscount(Coupon coupon)
         {
             var connection = new NpgsqlConnection(_configuration.GetConnectionString("DiscountDb"));
-            var affected = await connection.ExecuteAsync("UPDATE Coupon SET Id=@Id,ProductId=@ProductId,ProductName=@ProductName,Description=@Description,Amount=@Amount", new { Id = coupon.Id, ProductId = coupon.ProductId, ProdcutName = coupon.ProductName, Description = coupon.Description, Amount = coupon.Amount });
+            var affected = await connection.ExecuteAsync("UPDATE Coupon SET Id=@Id,ProductId=@ProductId,ProductName=@ProductName,Description=@Description,Amount=@Amount", new { Id = coupon.Id, ProductId = coupon.ProductId, ProductName = coupon.ProductName, Description = coupon.Description, Amount = coupon.Amount });
             if (affected > 0)
             {
                 return true;
