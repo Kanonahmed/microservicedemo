@@ -3,5 +3,6 @@
     <Project Path="Services/Basket.API/Basket.API.csproj" Id="5576708a-6f04-41ae-9cd6-a359842f8126" />
     <Project Path="Services/Catalog.API/Catalog.API.csproj" Id="b854bd42-493b-4b08-9b7d-7e0513c061eb" />
     <Project Path="Services/Discount.API/Discount.API.csproj" Id="2410f85b-f2f8-4b10-979a-f20d1d301b41" />
+    <Project Path="Services/DiscountGRPC/DiscountGRPC.csproj" Id="fe932364-ee81-4aa7-8595-6b84f476cc3f" />
   </Folder>
 </Solution>
