@@ -16,7 +16,7 @@
         public decimal TotalPrice { 
             get
             {
-                decimal totalPrice = 0;
+                double totalPrice = 0;
                 foreach (var item in items)
                 {
                     totalPrice += item.Price;
